@@ -1,9 +1,9 @@
 // import REACT
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 // import COMPONENTS
-import EmployeeForm from '../components/CreateEmployeeForm';
+import EmployeeForm from '../components/FormPage/CreateEmployeeForm';
 
 // import STYLE
 import '../style/CreateEmployeePageStyle.css';

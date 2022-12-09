@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // import COMPONENTS
-import EmployeeTable from '../components/CurrentEmployeeTable.js';
+import EmployeeTable from '../components/EmployeesPage/CurrentEmployeeTable.js';
 
 // import STYLE
 import '../style/CurrentEmployeePageStyle.css';
