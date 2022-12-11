@@ -55,13 +55,14 @@ const AddEmployeeForm = () => {
         const data = {
             firstName: firstName,
             lastName: lastName,
-            birthDate: birthDate,
             startDate: startDate,
+            department: department,
+            birthDate: birthDate,
             street: street,
             city: city,
             state: state,
             zipCode: zipCode,
-            department: department
+ 
         };
         dispatch(addEmployee(data))
         toggleModal()
@@ -106,30 +107,33 @@ const AddEmployeeForm = () => {
                     />
                 </div>
                 <div className="employee-address">
-                    <Input 
-                        id="street" 
-                        label="Street" 
-                        type="text" 
-                        setter={setStreet} 
-                    />
-                    <Input 
-                        id="city" 
-                        label="City" 
-                        type="text" 
-                        setter={setCity} 
-                    />
-                    <Select 
-                        id="state" 
-                        label="State" 
-                        data={states}
-                        setter={setState}  
-                    />
-                    <Input 
-                        id="zipCode"
-                        label="Zip Code"
-                        type="number" 
-                        setter={setZipCode} 
-                    />
+                    <p className="address-label">Address</p>
+                    <div className="address">
+                        <Input 
+                            id="street" 
+                            label="Street" 
+                            type="text" 
+                            setter={setStreet} 
+                        />
+                        <Input 
+                            id="city" 
+                            label="City" 
+                            type="text" 
+                            setter={setCity} 
+                        />
+                        <Select 
+                            id="state" 
+                            label="State" 
+                            data={states}
+                            setter={setState}  
+                        />
+                        <Input 
+                            id="zipCode"
+                            label="Zip Code"
+                            type="number" 
+                            setter={setZipCode} 
+                        />
+                    </div> 
                 </div>
                 <div className="employee-department">
                     <Select 
@@ -139,7 +143,7 @@ const AddEmployeeForm = () => {
                         setter={setDepartment}  
                     />
                 </div>
-                <div className="bottom">
+                <div className="button">
                     <button>Save</button>
                 </div>
             </form >

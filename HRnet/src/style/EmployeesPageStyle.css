@@ -5,3 +5,14 @@
     justify-content: center;
     font-family: Roboto;;
 }
+
+.employees-table-comtainer {
+    width: 80%;
+}
+
+.table-upper-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 1000px;
+}

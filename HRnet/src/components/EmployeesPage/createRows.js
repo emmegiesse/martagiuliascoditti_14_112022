@@ -1,9 +1,9 @@
-export const createRow = (
+export const createRows = (
     firstName,
     lastName,
-    birthDate,
     startDate,
     department,
+    birthDate,
     street,
     city,
     state,
@@ -12,9 +12,9 @@ export const createRow = (
     return {
         firstName,
         lastName,
-        birthDate,
         startDate,
         department,
+        birthDate,
         street,
         city,
         state,
@@ -22,4 +22,4 @@ export const createRow = (
     };
 };
 
-export default createRow
+export default createRows

@@ -6,8 +6,49 @@
     align-items: center;
 }
 
-.title{
+.title {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-size: 1em;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
+
+.title h1, .employee-page-link {
+    padding-bottom: 15px;
+} 
+
+.employee-address {
+    margin-top: 25px;
+    border: solid;
+    border-width: 1px;
+    border-color: darkgray;
+}
+
+.address {
+    margin: 25px 10px;
+}
+
+label {
+    display: block;
+    margin-top: 0.7rem;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.address-label {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: -10px;
+    font-size: 0.9em;
+    display: block;
+    background-color: white;
+}
+
+.button {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
