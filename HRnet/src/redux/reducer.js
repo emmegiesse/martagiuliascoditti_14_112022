@@ -1,21 +1,20 @@
-//import REDUX
-import { createSlice } from "@reduxjs/toolkit";
+// import REDUX
+import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-    dataEmployee : [],
-}
+export const employeeSlice = createSlice({
+    name: "employees",
+    initialState: {
+        data: [],
+    },
 
-const { actions, reducer } = createSlice({
-    name: 'form',
-    initialState,
-    reducers : {
-        addEmployee: {
-            reducer: (state, action) => {
-                state.dataEmployee = [ ...action.payload.data, action.payload.newEmployee]
-            }        
+    reducers: {
+        addEmployee(state, action) {
+          state.data = [...state.data, action.payload];
         },
-    }
+    },
 });
 
-export { actions }
-export default reducer
+// Génère une action à chaque call du reducer
+export const { addEmployee } = employeeSlice.actions;
+
+export default employeeSlice.reducer;

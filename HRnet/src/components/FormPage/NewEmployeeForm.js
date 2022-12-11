@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 // import REDUX
 import { useDispatch} from 'react-redux';
+import { addEmployee } from '../../redux/reducer.js';
 
 // import COMPONENTS pour formulaire
 import Input from './FormInput.js';
@@ -11,8 +12,9 @@ import Select from './DropdownSelect.js';
 
 // import DROPDOWN component from REACT et Data 
 import {departments, states} from "../../data/data.js";
-import Dropdown from 'react-dropdown';
+//import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+
 
 // import DATEPICKER component from REACT
 import DatePicker from 'react-datepicker';
@@ -23,10 +25,11 @@ import useModal from '../../modale/useModal.js';
 import Modal from '../../modale/Modal.js';
 
 // import STYLE
-import '../../style/CreateEmployeePageStyle.css';
+import '../../style/NewEmployeePageStyle.css';
 
 //JS---------------------------------------------
-const EmployeeForm = () => {
+//const AddEmployeeForm = ({ setOpen }) => 
+const AddEmployeeForm = () => {
     // initialisation des données
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
@@ -38,19 +41,18 @@ const EmployeeForm = () => {
     const [zipCode, setZipCode] = useState("")
     const [department, setDepartment] = useState("")
 
-    const dispatch = useDispatch()
-
+    const dispatch = useDispatch();
     const { isShowing: showModal, toggle: toggleModal } = useModal();
 
     // fonction qui permet de créer une constante avec les informations passées du store 
     /**
      * @param {*} e 
     */
-    const createEmployee = (e) => {
-        e.preventDefault()
+    const saveEmployee = (e) => {
+        e.preventDefault();
         birthDate = birthDate.toLocaleDateString()
         startDate = startDate.toLocaleDateString()
-        const newEmployee = {
+        const data = {
             firstName: firstName,
             lastName: lastName,
             birthDate: birthDate,
@@ -60,13 +62,15 @@ const EmployeeForm = () => {
             state: state,
             zipCode: zipCode,
             department: department
-        }
-        dispatch({ type: "addEmployee", payload: newEmployee })
+        };
+        dispatch(addEmployee(data))
         toggleModal()
-        console.log("newEmployee",newEmployee)
+        console.log("newEmployee",data)
+        console.log("employee",firstName, lastName, birthDate, startDate, department)
+        console.log("adresse",street,city,state,zipCode)
         //  modal to confirm envoie
-    }
-    
+    };
+
     return (
         <div className="create-employee">
             <Modal
@@ -75,13 +79,13 @@ const EmployeeForm = () => {
                 text="Employee Created!"
                 title="HRnet - Create Employee" 
             />
-            <form id="employee-form" onSubmit={createEmployee}>
+            <form id="employee-form" onSubmit={saveEmployee}>
                 <div className="employee-informations">
                     <Input 
                         id="firstName" 
                         label="First Name" 
                         type="text" 
-                        setter={setFirstName} 
+                        setter={setFirstName}
                     />
                     <Input 
                         id="lastName" 
@@ -101,7 +105,7 @@ const EmployeeForm = () => {
                         onChange={(date) => setStartDate(date)} 
                     />
                 </div>
-                <div class="employee-address">
+                <div className="employee-address">
                     <Input 
                         id="street" 
                         label="Street" 
@@ -117,8 +121,8 @@ const EmployeeForm = () => {
                     <Select 
                         id="state" 
                         label="State" 
-                        setter={setState} 
-                        data={states} 
+                        data={states}
+                        setter={setState}  
                     />
                     <Input 
                         id="zipCode"
@@ -131,8 +135,8 @@ const EmployeeForm = () => {
                     <Select 
                         id="department" 
                         label="Department" 
-                        setter={setDepartment} 
-                        data={departments} 
+                        data={departments}
+                        setter={setDepartment}  
                     />
                 </div>
                 <div className="bottom">
@@ -142,4 +146,4 @@ const EmployeeForm = () => {
         </div>
     )
 };
-export default EmployeeForm;
+export default AddEmployeeForm;

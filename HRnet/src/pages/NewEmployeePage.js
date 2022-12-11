@@ -1,17 +1,21 @@
 // import REACT
 import React from 'react';
+//import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // import COMPONENTS
-import EmployeeForm from '../components/FormPage/CreateEmployeeForm';
+import AddEmployeeForm from '../components/FormPage/NewEmployeeForm.js';
 
 // import STYLE
-import '../style/CreateEmployeePageStyle.css';
+import '../style/NewEmployeePageStyle.css';
 
-const CreateEmployee = () => {
+//JS___________________________________
+const NewEmployeePage = () => {
+    //const [setOpen] = useState(false);
+
     return (
         <main className="create-employee-page">
-            <div class="title">
+            <div className="title">
                 <h1>HRnet</h1>
                 <div className="employee-page-link">
                     <Link to="/employees">
@@ -21,10 +25,12 @@ const CreateEmployee = () => {
                 <h2>Create Employee</h2>
             </div>
             <div className="create-employee-form">
-                <EmployeeForm />
+                <AddEmployeeForm />
+                {/* <AddEmployeeForm setOpen={setOpen}/> */}
             </div>
         </main>
     );
+
 };
 
-export default CreateEmployee;
+export default NewEmployeePage

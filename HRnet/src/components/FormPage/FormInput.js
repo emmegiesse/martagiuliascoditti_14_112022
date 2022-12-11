@@ -5,11 +5,18 @@ import React from 'react';
 // <label for="first-name">First Name</label>
 // <input type="text" id="first-name" />
 
-const Input = ({ id, label, type, setter}) => {
+const Input = ({ id, label, type, setter }) => {
     return (
         <div>
             <label htmlFor={id}>{label}</label>
-            <input type={type} id={id} onChange={(e) => setter(e.target.value)}></input>
+            {/* <input type={type} id={id} onChange={(e) => setter(e.target.value)}></input> 
+            <input type={type} id={id}></input>*/}
+            <input 
+                type={type} 
+                id={id} 
+                onChange={(e) => 
+                    setter(e.target.value)}>
+            </input>
         </div>
     )
 }

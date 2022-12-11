@@ -3,27 +3,23 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 // import PAGES and COMPONENENTS
-import CreateEmployee from '../pages/CreateEmployeePage.js';
-import Employees from '../pages/EmployeesPage.js';
-import Error from '../pages/ErrorPage';
-import Header from '../components/Header';
+import NewEmployeePage from '../pages/NewEmployeePage.js';
+import EmployeesPage from '../pages/EmployeesPage.js';
+import ErrorPage from '../pages/ErrorPage';
 
 // import STYLE
-import '../App.css'
+import '../style/AppStyle.css'
 
 //-----------------------------------------
-
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL} >
       <main>
-        <Header />
+       {/* <Header /> */}
         <Routes>
-          <Route path="/" element={<CreateEmployee/>} />
-          {/*
-          <Route path="/employees" element={<Employees />} />
-          <Route path="*" element={<Error />} /> 
-          */}
+          <Route path="/" element={<NewEmployeePage/>} />
+          <Route path="/employees" element={<EmployeesPage />} />
+          <Route path="*" element={<ErrorPage />} /> 
         </Routes>
       </main>
     </BrowserRouter>

@@ -3,19 +3,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // import COMPONENTS
-import EmployeeTable from '../components/EmployeesPage/CurrentEmployeeTable.js';
+import EmployeesTable from '../components/EmployeesPage/AllEmployeesTable.js';
 
 // import STYLE
-import '../style/CurrentEmployeePageStyle.css';
+import '../style/EmployeesPageStyle.css';
 
-const Employees = () => {
+const EmployeesPage = () => {
     return (
         <div className="current-employees">
             <div className="employees-title">
                 <h2>Current Employees</h2>
             </div>
             <section className="employees-table">
-                <EmployeeTable />
+                <EmployeesTable />
             </section>
             <div className="EmployeesLink">
                 <Link to="/">
@@ -26,4 +26,4 @@ const Employees = () => {
     );
 };
 
-export default Employees;
+export default EmployeesPage;

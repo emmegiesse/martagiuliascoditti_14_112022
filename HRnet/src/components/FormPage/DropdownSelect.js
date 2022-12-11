@@ -6,7 +6,6 @@ import React from 'react';
 
 const Select = ({ id,label, setter, data }) => {
     return (
-
         <div>
             <label htmlFor={id}>{label}</label>
             <select id={id} onChange={(e) => setter(e.target.value)} >
@@ -15,7 +14,6 @@ const Select = ({ id,label, setter, data }) => {
                 })}
             </select>
         </div>
-
     )
 }
 
