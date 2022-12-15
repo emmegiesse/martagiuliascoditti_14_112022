@@ -15,14 +15,14 @@ import {departments, states} from "../../data/data.js";
 //import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
-
 // import DATEPICKER component from REACT
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 // import MODALE component
-import useModal from '../../modale/useModal.js';
-import Modal from '../../modale/Modal.js';
+import { Modal, useModal } from 'mgs-modal';
+//import useModal from '../../modale/useModal.js';
+//import Modal from '../../modale/Modal.js';
 
 // import STYLE
 import '../../style/NewEmployeePageStyle.css';
