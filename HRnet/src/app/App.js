@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NewEmployeePage from '../pages/NewEmployeePage.js';
 import EmployeesPage from '../pages/EmployeesPage.js';
 import ErrorPage from '../pages/ErrorPage';
+import Header from '../components/Header.js';
 
 // import STYLE
 import '../style/AppStyle.css'
@@ -15,7 +16,7 @@ function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL} >
       <main>
-       {/* <Header /> */}
+        <Header path="/" element={<NewEmployeePage/>} />
         <Routes>
           <Route path="/" element={<NewEmployeePage/>} />
           <Route path="/employees" element={<EmployeesPage />} />

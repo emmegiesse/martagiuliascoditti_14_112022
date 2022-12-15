@@ -13,17 +13,42 @@
     font-size: 1em;
     margin-top: 30px;
     margin-bottom: 20px;
+    color: rgb(48, 58, 39);
 }
 
 .title h1, .employee-page-link {
     padding-bottom: 15px;
 } 
 
+.create-employee {
+    margin: auto;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.employee-form-container{
+    padding: 30px;
+    border: solid;
+    border-width: 2px;
+    border-color: rgb(98, 116, 83);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.employee-form-fill {
+    display: flex;
+    flex: row;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
 .employee-address {
     margin-top: 25px;
     border: solid;
     border-width: 1px;
-    border-color: darkgray;
+    border-color: rgb(98, 116, 83);
 }
 
 .address {
@@ -34,21 +59,75 @@ label {
     display: block;
     margin-top: 0.7rem;
     margin-bottom: 8px;
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 .address-label {
     position: absolute;
-    margin-left: 20px;
-    margin-top: -10px;
+    margin-left: 110px;
+    margin-top: -25px;
     font-size: 0.9em;
     display: block;
-    background-color: white;
+    padding: 15px 30px;
+    color: white;
+    border-radius: 20px;
+    background-color:  rgb(90, 102, 80);
 }
 
 .button {
     margin-top: 20px;
     display: flex;
     justify-content: center;
+    margin-bottom: 30px;
 }
 
+button {
+    padding: 10px 50px;
+    font-size: 1rem;
+    background-color: rgb(138, 192, 84);
+    border: none;
+    border-radius: 10px;
+}
+
+@media (max-width: 400px) {
+    .title {
+        font-size: 0.8em;
+        margin-top: 20px;
+    }
+
+    .create-employee {
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .title h1, .employee-page-link {
+        padding-bottom: 5px;
+    } 
+    
+    .employee-form-container{
+        border-width: 1px;
+        padding: 15px;
+    }
+    
+    .employee-form-fill {
+        display: flex;
+        flex: row;
+    }
+    
+    .employee-address {
+        width:170px;
+        margin-left: 20px;
+    }
+    
+    label {
+        font-size: 0.9em;
+    }
+    
+    .address-label {
+        margin-left: 70px;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+}

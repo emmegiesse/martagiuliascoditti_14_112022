@@ -14,14 +14,14 @@ const EmployeesPage = () => {
             <div className="employees-title">
                 <h2>Current Employees</h2>
             </div>
+            <div className="employee-form-link">
+                <Link to="/">
+                    HRnet - Home - New Employee Form
+                </Link>
+            </div>
             <section className="employees-table">
                 <EmployeesTable />
             </section>
-            <div className="EmployeesLink">
-                <Link to="/">
-                    Home
-                </Link>
-            </div>
         </div>
     );
 };

@@ -26,6 +26,7 @@ import { Modal, useModal } from 'mgs-modal';
 
 // import STYLE
 import '../../style/NewEmployeePageStyle.css';
+import { withTheme } from 'styled-components';
 
 //JS---------------------------------------------
 //const AddEmployeeForm = ({ setOpen }) => 
@@ -78,74 +79,85 @@ const AddEmployeeForm = () => {
                 isShowing={showModal}
                 hide={toggleModal}
                 text="Employee Created!"
-                title="HRnet - Create Employee" 
+                title="HRnet - Create New Employee" 
+                primary="rgb(234, 242, 221)"
+                secondary="rgb(48, 58, 39)"
             />
             <form id="employee-form" onSubmit={saveEmployee}>
-                <div className="employee-informations">
-                    <Input 
-                        id="firstName" 
-                        label="First Name" 
-                        type="text" 
-                        setter={setFirstName}
-                    />
-                    <Input 
-                        id="lastName" 
-                        label="Last Name"
-                        type="text"  
-                        setter={setLastName} 
-                    />
-                    <label htmlFor="date-of-birth">Date of Birth</label>
-                    <DatePicker 
-                        className="customDatePicker"
-                        selected={birthDate} 
-                        onChange={(date) => setBirthDate(date)} 
-                    />
-                    <label htmlFor="start-date">Start Date</label>
-                    <DatePicker 
-                        selected={startDate} 
-                        onChange={(date) => setStartDate(date)} 
-                    />
-                </div>
-                <div className="employee-address">
-                    <p className="address-label">Address</p>
-                    <div className="address">
-                        <Input 
-                            id="street" 
-                            label="Street" 
-                            type="text" 
-                            setter={setStreet} 
-                        />
-                        <Input 
-                            id="city" 
-                            label="City" 
-                            type="text" 
-                            setter={setCity} 
-                        />
-                        <Select 
-                            id="state" 
-                            label="State" 
-                            data={states}
-                            setter={setState}  
-                        />
-                        <Input 
-                            id="zipCode"
-                            label="Zip Code"
-                            type="number" 
-                            setter={setZipCode} 
-                        />
+                <div className="employee-form-container">
+                    <div className="employee-form-fill">
+
+                        <div className="employee-informations">
+                            <Input 
+                                id="firstName" 
+                                label="First Name" 
+                                type="text" 
+                                setter={setFirstName}
+                            />
+                            <Input 
+                                id="lastName" 
+                                label="Last Name"
+                                type="text"  
+                                setter={setLastName} 
+                            />
+                            <label htmlFor="date-of-birth">Date of Birth</label>
+                            <DatePicker 
+                                className="customDatePicker"
+                                selected={birthDate} 
+                                onChange={(date) => setBirthDate(date)} 
+                            />
+                            <label htmlFor="start-date">Start Date</label>
+                            <DatePicker 
+                                selected={startDate} 
+                                onChange={(date) => setStartDate(date)} 
+                            />
+                            <div className="employee-department">
+                                <Select 
+                                    id="department" 
+                                    label="Department" 
+                                    data={departments}
+                                    setter={setDepartment}  
+                            />
+                            </div>
+                        </div>
+
+                        <div className="employee-address">
+                            <p className="address-label">Address</p>
+                            <div className="address">
+                                <Input 
+                                    id="street" 
+                                    label="Street" 
+                                    type="text" 
+                                    setter={setStreet} 
+                                />
+                                <Input 
+                                    id="city" 
+                                    label="City" 
+                                    type="text" 
+                                    setter={setCity} 
+                                />
+                                <Select 
+                                    id="state" 
+                                    label="State" 
+                                    data={states}
+                                    setter={setState}  
+                                />
+                                <Input 
+                                    id="zipCode"
+                                    label="Zip Code"
+                                    type="number" 
+                                    setter={setZipCode} 
+                                />
+                            </div>
+                        </div>
+
                     </div> 
                 </div>
-                <div className="employee-department">
-                    <Select 
-                        id="department" 
-                        label="Department" 
-                        data={departments}
-                        setter={setDepartment}  
-                    />
-                </div>
+                
                 <div className="button">
                     <button>Save</button>
                 </div>
+                
             </form >
         </div>
     )

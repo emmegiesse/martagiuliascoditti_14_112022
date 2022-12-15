@@ -93,20 +93,9 @@ const EmployeesTable = () => {
 
     return (
         <Paper
-            sx={{ width: "100%", overflow: "hidden", margin: "2.5em" }}
+            sx={{ overflow: "hidden" }}
             align="center"
         >
-            <div className="table-upper-bar">
-                <TextField
-                    id="outlined-search"
-                    type="search"
-                    label="search:"
-                    sx={{ margin: "0em" }}
-                    onChange={(e) => 
-                        requestSearch(e.target.value.trim())}
-                />
-            </div>
-            
             <TableContainer sx={{ maxHeight: 440 }}>
                 <Table size="small" stickyHeader>
 
@@ -177,6 +166,18 @@ const EmployeesTable = () => {
                     onPageChange={handleChangePage}
                     onRowsPerPageChange={handleChangeRowsPerPage}
             />
+
+            <div className="table-search-bar">
+                <TextField
+                    id="outlined-search"
+                    type="search"
+                    label="search:"
+                    sx={{ margin: "0em" }}
+                    onChange={(e) => 
+                        requestSearch(e.target.value.trim())}
+                />
+            </div>
+            
 
         </Paper>
     )
